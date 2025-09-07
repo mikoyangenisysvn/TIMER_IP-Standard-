@@ -1,0 +1,74 @@
+Coverage Report Summary Data by instance
+
+=================================================================================
+=== Instance: /test_bench/uut/U0
+=== Design Unit: work.apb
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      6         6         0   100.00%
+    Statements                       2         2         0   100.00%
+
+=================================================================================
+=== Instance: /test_bench/uut/U1
+=== Design Unit: work.register
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        30        30         0   100.00%
+    Conditions                       1         1         0   100.00%
+    Expressions                      4         4         0   100.00%
+    Statements                      39        39         0   100.00%
+    Toggles                        338       338         0   100.00%
+
+=================================================================================
+=== Instance: /test_bench/uut/U2
+=== Design Unit: work.control_counter
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        25        24         1    96.00%
+    Conditions                      12        11         1    91.66%
+    Statements                       6         6         0   100.00%
+    Toggles                         36        36         0   100.00%
+
+=================================================================================
+=== Instance: /test_bench/uut/U3
+=== Design Unit: work.counter
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         7         6         1    85.71%
+    Conditions                       5         4         1    80.00%
+    Statements                       5         5         0   100.00%
+    Toggles                        128       128         0   100.00%
+
+=================================================================================
+=== Instance: /test_bench/uut/U4
+=== Design Unit: work.interrupt
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      2         2         0   100.00%
+    Statements                       1         1         0   100.00%
+
+=================================================================================
+=== Instance: /test_bench/uut
+=== Design Unit: work.timer_top
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        498       498         0   100.00%
+
+=================================================================================
+=== Instance: /test_bench
+=== Design Unit: work.test_bench
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                     663       663         0   100.00%
+    Toggles                        174       164        10    94.25%
+
+
+Total Coverage By Instance (filtered view): 96.96%
+

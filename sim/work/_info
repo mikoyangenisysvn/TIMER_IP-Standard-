@@ -1,0 +1,194 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f vlog 2023.3 2023.07, Jul 17 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/ictc/student_data/duy_ic22/16_ss16/sim
+T_opt
+!s110 1755403755
+VocN<5]PD8NCG9FMa@i6`?3
+04 10 4 work test_bench fast 0
+=1-bc2411209e67-68a155eb-33c42-301dcf
+Z2 !s102 +cover=bcesft
+R0
+!s12b OEM100
+!s124 OEM10U7 
+o-quiet -auto_acc_if_foreign -work work +cover=bcesft
+Z3 tCvgOpt 0
+n@_opt
+OL;O;2023.3;77
+vapb
+Z4 2../rtl/timer_top.v|../rtl/counter.v|../rtl/control_counter.v|../rtl/apb.v|../rtl/interrupt.v|../rtl/register.v|../tb/test_bench.v
+Z5 !s110 1755403754
+!i10b 1
+!s100 Fa_U45]L[PQoc2h_UX4Z;1
+IaUNjUcaNg43jj[Q2fMCQi0
+R1
+w1754903291
+8../rtl/apb.v
+F../rtl/apb.v
+!i122 0
+L0 1 74
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+Z7 OL;L;2023.3;77
+r1
+!s85 0
+31
+Z8 !s108 1755403754.000000
+Z9 !s107 ../tb/test_bench.v|../rtl/register.v|../rtl/interrupt.v|../rtl/apb.v|../rtl/control_counter.v|../rtl/counter.v|../rtl/timer_top.v|
+Z10 !s90 +cover=bcesft|-f|compile.f|
+!i113 0
+R2
+Z11 o+cover=bcesft -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+vcontrol_counter
+R4
+R5
+!i10b 1
+!s100 J9S2jZM9GGE_:U;;g@fKJ3
+IdFhIBWV=5MmcZMo2aCdSd0
+R1
+w1754841745
+8../rtl/control_counter.v
+F../rtl/control_counter.v
+!i122 0
+L0 1 62
+R6
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R2
+R11
+R3
+vcounter
+R4
+R5
+!i10b 1
+!s100 EQJPIPZ<RFhj=7UkgEICK2
+I50HlX73SIR@LSN^mg0Fl61
+R1
+w1755399406
+8../rtl/counter.v
+F../rtl/counter.v
+!i122 0
+L0 1 29
+R6
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R2
+R11
+R3
+vinterrupt
+R4
+R5
+!i10b 1
+!s100 `Q]aS@:INDI=1RV6=0bD:2
+IUOflzUH3B1zzOYo0j1jQ91
+R1
+w1754828146
+8../rtl/interrupt.v
+F../rtl/interrupt.v
+!i122 0
+L0 1 23
+R6
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R2
+R11
+R3
+vregister
+R4
+R5
+!i10b 1
+!s100 `U9LdIfkYHX:a_0QVTEfQ3
+IiGzjoN;8@SmB9@:z7CTGU2
+R1
+w1754970332
+8../rtl/register.v
+F../rtl/register.v
+!i122 0
+L0 1 107
+R6
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R2
+R11
+R3
+vtest_bench
+R4
+R5
+!i10b 1
+!s100 kYd:?oASRH_k=cKa:KPAf1
+IjM26LZe0D8g>U4TzM^V=81
+R1
+w1755403743
+8../tb/test_bench.v
+F../tb/test_bench.v
+!i122 0
+L0 2 814
+R6
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R2
+R11
+R3
+vtimer_top
+R4
+R5
+!i10b 1
+!s100 W>zXoLD>jn7PGoFCnd^[m2
+IYbfm8WGH4oS2nEKPNeWY72
+R1
+w1754917394
+8../rtl/timer_top.v
+F../rtl/timer_top.v
+!i122 0
+L0 1 106
+R6
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R2
+R11
+R3

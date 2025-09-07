@@ -1,0 +1,395 @@
+# vsim -coverage -l test.log -c test_bench -voptargs="+cover=bcesft" -assertdebug -do "coverage save -onexit test.ucdb; log -r /*;run -all" 
+# Start time: 11:09:15 on Aug 17,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# //  Questa Intel Starter FPGA Edition-64
+# //  Version 2023.3 linux_x86_64 Jul 17 2023
+# //
+# //  Copyright 1991-2023 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading work.test_bench(fast)
+# coverage save -onexit test.ucdb
+#  log -r /*
+# run -all
+#  [01]: register default value
+# [read] 0x0 = 0x00000100
+# [read] 0x4 = 0x00000000
+# [read] 0x8 = 0x00000000
+# [read] 0xc = 0xffffffff
+# [read] 0x10 = 0xffffffff
+# [read] 0x14 = 0x00000000
+# [read] 0x18 = 0x00000000
+# [read] 0x1c = 0x00000000
+#  [02]: overflow from TDR0 to TDR1
+# t=       265 [TB_WRITE]: addr=000 || data=00000000
+# t=       306 [TB_WRITE]: addr=004 || data=000000ff
+# t=       346 [TB_WRITE]: addr=008 || data=00000000
+# t=       386 [TB_WRITE]: addr=000 || data=00000001
+# [read] 0x4 = 0x000001ff
+# [read] 0x8 = 0x00000000
+#  [03]: overflow from TDR0 to TDR1
+# t=      3015 [TB_WRITE]: addr=000 || data=00000000
+# t=      3046 [TB_WRITE]: addr=004 || data=ffffff00
+# t=      3076 [TB_WRITE]: addr=008 || data=00000000
+# t=      3106 [TB_WRITE]: addr=000 || data=00000001
+# [read] 0x4 = 0x00000002
+# [read] 0x8 = 0x00000001
+#  [04]: Interrupt 
+# t=      5755 [TB_WRITE]: addr=00c || data=00000010
+# t=      5786 [TB_WRITE]: addr=010 || data=00000000
+# t=      5816 [TB_WRITE]: addr=014 || data=00000001
+# t=      5846 [TB_WRITE]: addr=000 || data=00000001
+# [read] 0x18 = 0x00000000
+# t=      6105 [TB_WRITE]: addr=018 || data=00000001
+# [read] 0x18 = 0x00000000
+#  toggle psel 
+# [read] 0x4 = 0xaaaaaaac
+#  hold psel high in SETUP phase for mutiple cycle
+# [read] 0x4 = 0xbbbbbbbd
+#  change pwrite mid ENABLE phase
+# [read] 0x4 = 0xbbbbbbc3
+#  [05]: div_en/div_val check
+# t=      6365 [TB_WRITE]: addr=000 || data=00000103
+# [read] 0x4 = 0xbbbbbbd2
+#  [06] psel = 0 penable = 1 pwrite = 0
+# [07] THCSR write to toggle halt_req
+# t=      6785 [TB_WRITE]: addr=01c || data=00000001
+# [read] 0x1c = 0x00000001
+# [08] TISR clear interrupt
+# t=      6935 [TB_WRITE]: addr=018 || data=00000001
+# [read] 0x18 = 0x00000000
+# [09] TCR write with div_val > 8
+# t=      7085 [TB_WRITE]: addr=000 || data=00000f03
+# [read] 0x0 = 0x00000103
+# [10] default case in write 
+# t=      7235 [TB_WRITE]: addr=fff || data=deadbeef
+# [11] TIER write to enable interrupt
+# t=      7356 [TB_WRITE]: addr=014 || data=00000001
+# [read] 0x14 = 0x00000001
+#  [12] Write TISR with tim_pwdata[0] = 
+# t=      7515 [TB_WRITE]: addr=018 || data=00000000
+# [read] 0x18 = 0x00000000
+#  [13] Trigger int_st_set by matching counter
+# t=      7665 [TB_WRITE]: addr=00c || data=00001234
+# t=      7686 [TB_WRITE]: addr=010 || data=00005678
+# t=      7716 [TB_WRITE]: addr=004 || data=00005678
+# [read] 0x18 = 0x00000000
+#  [14] Toggle register
+# t=      7875 [TB_WRITE]: addr=00c || data=f2345678
+# t=      7896 [TB_WRITE]: addr=008 || data=87654321
+# t=      7926 [TB_WRITE]: addr=014 || data=0000000f
+# t=      7956 [TB_WRITE]: addr=01c || data=00000001
+# t=      7986 [TB_WRITE]: addr=01c || data=00000000
+#  TCMP0 TCMP1
+# t=      8016 [TB_WRITE]: addr=00c || data=ffffffff
+# t=      8046 [TB_WRITE]: addr=010 || data=aaaaaaaa
+#  TDR1
+# t=      8076 [TB_WRITE]: addr=008 || data=55555555
+#  Toggle div_val
+# t=      8106 [TB_WRITE]: addr=000 || data=00000101
+# t=      8136 [TB_WRITE]: addr=000 || data=00000201
+# t=      8166 [TB_WRITE]: addr=000 || data=00000401
+# toggle halt_req
+# t=      8196 [TB_WRITE]: addr=01c || data=00000001
+# t=      8226 [TB_WRITE]: addr=01c || data=00000000
+#  Change value for toggling
+# t=      8256 [TB_WRITE]: addr=008 || data=aaaaaaaa
+# t=      8286 [TB_WRITE]: addr=008 || data=55555555
+# t=      8316 [TB_WRITE]: addr=008 || data=33333333
+# t=      8346 [TB_WRITE]: addr=008 || data=cccccccc
+# t=      8376 [TB_WRITE]: addr=000 || data=00000001
+# t=      8406 [TB_WRITE]: addr=000 || data=00000002
+# t=      8436 [TB_WRITE]: addr=000 || data=00000004
+# t=      8466 [TB_WRITE]: addr=000 || data=00000008
+#  [15] {TDR1,TDR0} == {TCM1,TCMP0}
+# t=      8596 [TB_WRITE]: addr=00c || data=89abcdef
+# t=      8626 [TB_WRITE]: addr=010 || data=01234567
+# t=      8656 [TB_WRITE]: addr=004 || data=89abcdef
+# t=      8686 [TB_WRITE]: addr=008 || data=01234567
+# [read] 0x18 = 0x00000001
+#  [16] Match counter with compare value
+# t=      8845 [TB_WRITE]: addr=000 || data=00000000
+# t=      8866 [TB_WRITE]: addr=004 || data=89abcdef
+# t=      8896 [TB_WRITE]: addr=008 || data=01234567
+# t=      8926 [TB_WRITE]: addr=00c || data=89abcdef
+# t=      8956 [TB_WRITE]: addr=010 || data=01234567
+# t=      8986 [TB_WRITE]: addr=014 || data=00000001
+# t=      9016 [TB_WRITE]: addr=000 || data=00000001
+# [read] 0x18 = 0x00000001
+#  [17] Trigger default case in register
+# t=      9185 [TB_WRITE]: addr=000 || data=00000000
+# t=      9206 [TB_WRITE]: addr=fff || data=deadbeef
+# [read] 0xfff = 0x00000000
+#  [18] Clear interrupt status
+# t=      9365 [TB_WRITE]: addr=000 || data=00000000
+# t=      9386 [TB_WRITE]: addr=004 || data=89abcdef
+# t=      9416 [TB_WRITE]: addr=008 || data=01234567
+# t=      9446 [TB_WRITE]: addr=00c || data=89abcdef
+# t=      9476 [TB_WRITE]: addr=010 || data=01234567
+# t=      9506 [TB_WRITE]: addr=014 || data=00000001
+# t=      9536 [TB_WRITE]: addr=000 || data=00000001
+# [read] 0x18 = 0x00000001
+# t=      9605 [TB_WRITE]: addr=01c || data=00000001
+# [read] 0x18 = 0x00000001
+#  Toggle high bit
+# t=      9775 [TB_WRITE]: addr=00c || data=ffffffff
+# t=      9796 [TB_WRITE]: addr=010 || data=ffffffff
+# t=      9826 [TB_WRITE]: addr=00c || data=80000000
+# t=      9856 [TB_WRITE]: addr=010 || data=80000000
+# t=      9886 [TB_WRITE]: addr=00c || data=00000000
+# t=      9916 [TB_WRITE]: addr=010 || data=00000000
+#  [19] div_val = 0
+# t=     10046 [TB_WRITE]: addr=000 || data=00000100
+# [read] 0x4 = 0x89abce22
+# Expect TDR0 = 0 
+#  [20] div_en = 0 div_val = 8
+# t=     10405 [TB_WRITE]: addr=000 || data=00000801
+# [read] 0x4 = 0x89abce38
+#  Expect TDR = 0 when div_en = 0
+#  [21] div_val = 1
+# t=     10755 [TB_WRITE]: addr=000 || data=00000101
+# [read] 0x4 = 0x89abce51
+# Expect TDR0 = 10
+#  [22] div_val = 255
+# t=     11005 [TB_WRITE]: addr=000 || data=0000ff01
+# [read] 0x4 = 0x89abcf5f
+# t=     13605 [TB_WRITE]: addr=000 || data=0000ff01
+# [read] 0x4 = 0x89abd064
+# [23] div_val = 0
+# t=     16215 [TB_WRITE]: addr=000 || data=00000100
+# [read] 0x4 = 0x89abd068
+# [24] timer_en = 0
+# t=     16475 [TB_WRITE]: addr=000 || data=00000000
+# [read] 0x4 = 0x89abd068
+#  [25] Toggle div_factor
+# t=     16725 [TB_WRITE]: addr=000 || data=00000100
+# t=     16746 [TB_WRITE]: addr=000 || data=00000018
+# [read] 0x0 = 0x00000000
+#  [26] Enable interrupt counting 
+# t=     17005 [TB_WRITE]: addr=000 || data=00000001
+# t=     17026 [TB_WRITE]: addr=008 || data=00000001
+# [read] 0x0 = 0x00000001
+# [read] 0x8 = 0x00000001
+# [27]int_en = 0 while int_st = 1
+# t=     18215 [TB_WRITE]: addr=00c || data=00000010
+# t=     18236 [TB_WRITE]: addr=01c || data=00000000
+# t=     18266 [TB_WRITE]: addr=014 || data=00000000
+# t=     18296 [TB_WRITE]: addr=000 || data=00000001
+# [read] 0x18 = 0x00000001
+#  [28] Write TDR0 0x0000_00FF TDR1 0x0000_0000
+# t=     18655 [TB_WRITE]: addr=000 || data=00000000
+# t=     18676 [TB_WRITE]: addr=004 || data=000000ff
+# t=     18706 [TB_WRITE]: addr=008 || data=00000000
+# t=     18736 [TB_WRITE]: addr=000 || data=00000001
+# [read] 0x4 = 0x000001ff
+# [read] 0x8 = 0x00000000
+#  [29] Boundary TDR0, TDR1
+# t=     21365 [TB_WRITE]: addr=004 || data=ffffff00
+# t=     21396 [TB_WRITE]: addr=008 || data=00000000
+# [read] 0x4 = 0x00000000
+# [read] 0x8 = 0x00000001
+# [30] Countinues counting when overflow
+# t=     24105 [TB_WRITE]: addr=004 || data=ffffff00
+# t=     24126 [TB_WRITE]: addr=008 || data=ffffffff
+# [read] 0x4 = 0x00000001
+# [read] 0x8 = 0x00000000
+# [31] div_en = 0, timer_en = 1, count on sys_clk
+# t=     26845 [TB_WRITE]: addr=000 || data=00000000
+# t=     26866 [TB_WRITE]: addr=004 || data=00000000
+# t=     26896 [TB_WRITE]: addr=008 || data=00000000
+# t=     26926 [TB_WRITE]: addr=000 || data=00000001
+# [read] 0x4 = 0x0000009e
+# [read] 0x8 = 0x00000000
+#  [32] Write TCR to turn on timer
+# t=     28675 [TB_WRITE]: addr=000 || data=00000001
+# [read] 0x0 = 0x00000001
+#  [33] Write TMP0 and TCMP1
+# t=     28825 [TB_WRITE]: addr=00c || data=12345678
+# t=     28846 [TB_WRITE]: addr=010 || data=9abcdef0
+# [read] 0xc = 0x12345678
+#  [34] Write TDR0 and TDR1
+# t=     29005 [TB_WRITE]: addr=004 || data=89abcdef
+# t=     29026 [TB_WRITE]: addr=008 || data=01234567
+# [read] 0x18 = 0x00000001
+#  [35] Write TIER to turn on int_en
+# t=     29185 [TB_WRITE]: addr=014 || data=00000001
+# [read] 0x14 = 0x00000001
+#  [36] Write TISR to delete
+# t=     29335 [TB_WRITE]: addr=018 || data=00000001
+# [read] 0x18 = 0x00000000
+#  [37] div_val = 0
+# t=     29485 [TB_WRITE]: addr=000 || data=00000003
+# [read] 0x0 = 0x00000003
+#  [38] div_val = 255
+# t=     29735 [TB_WRITE]: addr=000 || data=0000ff03
+# [read] 0x0 = 0x00000003
+#  [39] Toggle int_cnt
+# t=     29985 [TB_WRITE]: addr=00c || data=00000001
+# t=     30006 [TB_WRITE]: addr=010 || data=00000000
+# t=     30036 [TB_WRITE]: addr=014 || data=00000001
+# t=     30066 [TB_WRITE]: addr=000 || data=00000001
+# [read] 0x18 = 0x00000000
+#  [40] Continuos toggling div_val
+# t=     31225 [TB_WRITE]: addr=000 || data=00000103
+# t=     31246 [TB_WRITE]: addr=000 || data=00000203
+# t=     31276 [TB_WRITE]: addr=000 || data=00000403
+# t=     31306 [TB_WRITE]: addr=000 || data=00000803
+# [read] 0x0 = 0x00000803
+# [41] timer_en off
+# t=     31665 [TB_WRITE]: addr=000 || data=00000000
+# [read] 0x4 = 0x89abcece
+# [42] div_val = 0xF8
+# t=     31915 [TB_WRITE]: addr=000 || data=0000f803
+# [read] 0x0 = 0x00000803
+# [43] increase over 31
+# t=     32265 [TB_WRITE]: addr=00c || data=00000001
+# t=     32286 [TB_WRITE]: addr=010 || data=00000000
+# t=     32316 [TB_WRITE]: addr=014 || data=00000001
+# t=     32346 [TB_WRITE]: addr=000 || data=00000001
+# [read] 0x18 = 0x00000000
+# [44] div_val = 0xE8
+# t=     32905 [TB_WRITE]: addr=000 || data=0000e803
+# [read] 0x0 = 0x00000803
+# [45] increase int_cnt over 63
+# t=     33255 [TB_WRITE]: addr=00c || data=00000001
+# t=     33276 [TB_WRITE]: addr=010 || data=00000000
+# t=     33306 [TB_WRITE]: addr=014 || data=00000001
+# t=     33336 [TB_WRITE]: addr=000 || data=00000001
+# [read] 0x18 = 0x00000000
+# [46] div_val = 4
+# t=     34195 [TB_WRITE]: addr=000 || data=00000403
+# [read] 0x0 = 0x00000403
+# [47] div_val = 6
+# t=     34445 [TB_WRITE]: addr=000 || data=00000603
+# [read] 0x0 = 0x00000603
+# [48] div_val = 8
+# t=     34695 [TB_WRITE]: addr=000 || data=00000803
+# [read] 0x0 = 0x00000803
+# [49] div_val[3] = 1
+# t=     34945 [TB_WRITE]: addr=000 || data=00000803
+# [read] 0x0 = 0x00000803
+#  [50] div_val[5] =1
+# t=     35095 [TB_WRITE]: addr=000 || data=00002003
+# [read] 0x0 = 0x00000003
+# [51] div_val[7] = 1
+# t=     35255 [TB_WRITE]: addr=000 || data=00008003
+# [read] 0x0 = 0x00000003
+# [52] div_val = 7
+# t=     35415 [TB_WRITE]: addr=000 || data=00000703
+# [read] 0x0 = 0x00000703
+# [53] div_val = 8
+# t=     35675 [TB_WRITE]: addr=000 || data=00000803
+# [read] 0x0 = 0x00000803
+# [54] div_val = 5
+# t=     35925 [TB_WRITE]: addr=000 || data=00000503
+# [read] 0x0 = 0x00000503
+# [55] div_val = 8
+# t=     36175 [TB_WRITE]: addr=000 || data=00000803
+# [read] 0x0 = 0x00000803
+# [56] div_val = 3
+# t=     36425 [TB_WRITE]: addr=000 || data=00000303
+# [read] 0x0 = 0x00000303
+# [57] div_val != 8
+# t=     36675 [TB_WRITE]: addr=000 || data=00000003
+# [read] 0x0 = 0x00000003
+# [58] div_val != 8
+# t=     36825 [TB_WRITE]: addr=000 || data=00000003
+# [read] 0x0 = 0x00000003
+# [59] int_cnt reaches 128
+# t=     36985 [TB_WRITE]: addr=000 || data=00000003
+# [read] 0x0 = 0x00000003
+# [60] int_cnt reaches 256
+# t=     38345 [TB_WRITE]: addr=000 || data=00000003
+# [read] 0x0 = 0x00000003
+# [61] cnt_en = 1 && timer_en = 0
+# t=     41005 [TB_WRITE]: addr=000 || data=00000002
+# [read] 0x0 = 0x00000002
+# [63] timer_en = 0
+# t=     41165 [TB_WRITE]: addr=004 || data=00000055
+# t=     41196 [TB_WRITE]: addr=008 || data=00000000
+# [read] 0x4 = 0x00000055
+# [read] 0x8 = 0x00000000
+#  Counter from 0
+# t=     42285 [TB_WRITE]: addr=000 || data=00000001
+# [read] 0x4 = 0x00000061
+# [read] 0x8 = 0x00000000
+#  Default bracnch of div_val
+# t=     42475 [TB_WRITE]: addr=000 || data=00000000
+# t=     42506 [TB_WRITE]: addr=000 || data=00000901
+# [read] 0x4 = 0x00000074
+#  cnt_en = 1 timer_en = 0
+# t=     42665 [TB_WRITE]: addr=000 || data=00000100
+# [read] 0x4 = 0x00000078
+#  [64] Toggle default by fail div_val
+# t=     42825 [TB_WRITE]: addr=000 || data=00000903
+# [read] 0x0 = 0x00000103
+# [65] Reset mid cycle
+# t=     42985 [TB_WRITE]: addr=000 || data=00000303
+# [read] 0x0 = 0x00000100
+# [66] Check cnt_en = 1, timer_en = 0
+# t=     43215 [TB_WRITE]: addr=000 || data=00000102
+# [read] 0x0 = 0x00000100
+# [67] Force cnt_en = 1 timer_en = 0
+# t=     43375 [TB_WRITE]: addr=000 || data=00000000
+# t=     43406 [TB_WRITE]: addr=000 || data=00000100
+# [read] 0x4 = 0x00000000
+# [68] Counter not increase timer_en = 0
+# t=     43665 [TB_WRITE]: addr=004 || data=00000000
+# t=     43696 [TB_WRITE]: addr=008 || data=00000000
+# t=     43726 [TB_WRITE]: addr=000 || data=00000001
+# [read] 0x4 = 0x00000000
+# [read] 0x8 = 0x00000000
+#  [69] Div_val default branch
+# t=     46355 [TB_WRITE]: addr=000 || data=00000903
+# [read] 0x4 = 0x00000000
+# [70] cnt_en = 1 timer_en = 0
+# t=     46515 [TB_WRITE]: addr=000 || data=00000100
+# [read] 0x4 = 0x00000000
+# [71] 
+# t=     47075 [TB_WRITE]: addr=000 || data=00000303
+# [72] Control counter div_val = 8
+# t=     47155 [TB_WRITE]: addr=000 || data=00000000
+# t=     47186 [TB_WRITE]: addr=000 || data=00000803
+# [read] 0x4 = 0x00000000
+# [73] Control counter div_val = 1
+# t=     50245 [TB_WRITE]: addr=000 || data=00000000
+# t=     50276 [TB_WRITE]: addr=000 || data=00000103
+# [read] 0x4 = 0x00000000
+# [74] Control counter div_val = 0
+# t=     51335 [TB_WRITE]: addr=000 || data=00000000
+# t=     51366 [TB_WRITE]: addr=000 || data=00000803
+# [read] 0x4 = 0x00000000
+# [75] div_val != 8
+# t=     51625 [TB_WRITE]: addr=000 || data=00000003
+# [read] 0x0 = 0x00000100
+# [76] 
+# t=     51785 [TB_WRITE]: addr=000 || data=ffffffff
+# [read] 0x4 = 0x00000000
+# [76] div_val = 9
+# t=     54845 [TB_WRITE]: addr=000 || data=00000003
+# [77] Cnt_en = 1 timer_en = 0
+# t=     54975 [TB_WRITE]: addr=000 || data=00000102
+# [read] 0x0 = 0x00000100
+# [78] Cnt_value timer_en = 0
+# t=     55135 [TB_WRITE]: addr=000 || data=00000002
+# t=     55166 [TB_WRITE]: addr=004 || data=12345678
+# t=     55196 [TB_WRITE]: addr=008 || data=9abcdef0
+# [read] 0x4 = 0x00000000
+# [read] 0x8 = 0x00000000
+# [79] cnt_en = 0
+# t=     55335 [TB_WRITE]: addr=000 || data=00000001
+# [read] 0x4 = 0x00000000
+#  TEST END
+# ** Note: $finish    : ../tb/test_bench.v(812)
+#    Time: 55545 ns  Iteration: 0  Instance: /test_bench
+# Saving coverage database on exit...
+# End time: 11:09:15 on Aug 17,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
