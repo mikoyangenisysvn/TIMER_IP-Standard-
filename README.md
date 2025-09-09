@@ -24,9 +24,6 @@ Main modules in the design:
 - Interrupt  
   - Generates interrupt signal when timer reaches the programmed value.  
 
-Block Diagram:  
-(add `doc/timer_block.png` if available)  
-
 ---
 
 Key Features
